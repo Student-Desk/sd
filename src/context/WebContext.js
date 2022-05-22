@@ -24,8 +24,7 @@ export const Web3ContextProvider = (props) => {
     body.classList.add(lightTheme)
   }
 
-  useEffect(() => {
-    console.log(currentAddress, "current Address"); 
+  useEffect(() => { 
   }, [currentAddress]);
 
 

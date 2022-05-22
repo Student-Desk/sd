@@ -27,8 +27,7 @@ function MIntedNftPosts() {
         const result = await covalent.getNftTokenIdForContract({
             chainId: 80001,
             contractAddress: tokenAddres,
-        })
-        console.log(result,"result");
+        }) 
         const dd = result.data.items && result.data.items.map(async (e) => {
             ids.push(e.token_id); 
         })
@@ -51,31 +50,28 @@ function MIntedNftPosts() {
                 chainId: 80001,
                 contractAddress: tokenAddres,
                 tokenId: element,
-            })
-            console.log(res,"res");
+            }) 
             getUri.push(res.data);
         }
         setData(getUri);
 
         for (let index = 0; index < getUri.length; index++) {
             const element = getUri[index];
-            console.log(element,"ele");
+      
             tokenUriData.push(element.items[0].nft_data[0].token_url);
         }
 
         for (let index = 0; index < tokenUriData.length; index++) {
             const element = tokenUriData[index];
-            console.log(element,"dd element");
+           
             var newStr = element.replace("http://10.128.0.18", "https://ipfs.moralis.io:2053");
             const dd = await axios.get(newStr);
-            console.log(dd,"dd");
+        
             metadata.push(dd.data);
         }
         setMeta(metadata);
     }, [tokenid]);
-
-
-    console.log(meta,"meta");
+ 
  
     return (
 

@@ -19,7 +19,7 @@ function UserData(props) {
         <div>
              {
                  udata && udata.map((e)=>{
-                     console.log(e,"ee");
+                  
                      return (
                          <div></div>
                      );

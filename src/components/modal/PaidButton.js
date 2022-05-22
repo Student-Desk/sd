@@ -7,10 +7,10 @@ function PaidButton(props) {
 
     useEffect(async()=>{
         const fatchContest = JSON.parse(JSON.stringify(data)); 
-        console.log(fatchContest,"eee");
+     
        const dd=  fatchContest && fatchContest.filter((e)=>{ 
         if(e.to === props.data){ 
-            console.log(e,"eee");
+         
           setOwnerAdd(true);
         }
       } ) 

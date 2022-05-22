@@ -90,7 +90,7 @@ export default function Comments(props) {
     queryPost.equalTo("objectId", id);
     queryPost.equalTo("usersLike", user.id);
     const lk = await  queryPost.first(); 
-    console.log(lk,"lk");
+  
 
     // query.equalTo("post", myPost);
     // query.equalTo("user", user);
@@ -299,8 +299,7 @@ export default function Comments(props) {
             </form>
           </div>
           {getComment
-            ? getComment.map((comt) => {
-              console.log(comt, "comt");
+            ? getComment.map((comt) => { 
               return <CommentList data={comt} postid={postid} />;
             })
             : ""}

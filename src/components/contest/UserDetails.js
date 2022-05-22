@@ -19,8 +19,7 @@ function UserDetails(props) {
       }
     } ) 
     },[props,isLoading,error])
-
-    console.log(owner,"owner");
+ 
   return (
     <div>{owner}</div>
   )
