@@ -211,6 +211,20 @@ function Header() {
                     </ListItemIcon>
                     <ListItemText className="fw-700  h4" primary="Claim Reward" />
                   </ListItemButton> 
+                  <ListItemButton onClick={() => navigatePages("/nfts")}>
+                    <ListItemIcon>
+                      <FontAwesomeIcon
+                        style={{
+                          padding: "12px",
+                          width: "20px",
+                          height: "20px",
+                        }}
+                        className="btn-round-md bg-red-gradiant text-white"
+                        icon={faTrophy}
+                      />
+                    </ListItemIcon>
+                    <ListItemText className="fw-700  h4" primary="Minted Post NFTs" />
+                  </ListItemButton> 
                 </List>
               </ul>
             </div>

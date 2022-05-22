@@ -66,6 +66,7 @@ import SuperDeals from './components/superDeals/SuperDeals';
 import Meta from './components/meta/Meta';
 import Meme from "./components/meta/Meme";
 import LeaderBoard from "./components/reward/leaderBoard";
+import MIntedNftPosts from "./pages/MIntedNftPosts";
 
 function App() {
     return (
@@ -89,6 +90,7 @@ function App() {
                         <Route exact path={`${process.env.PUBLIC_URL}/meta`} component={Meta} />
                         <Route exact path={`${process.env.PUBLIC_URL}/meme`} component={Meme} />
                         <Route exact path={`${process.env.PUBLIC_URL}/leader`} component={LeaderBoard} />
+                        <Route exact path={`${process.env.PUBLIC_URL}/nfts`} component={MIntedNftPosts} />
                         
 
 
