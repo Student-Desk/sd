@@ -2,7 +2,7 @@
 
 ## Coinbase Wallet Implementation: 
 
-```
+```javascript
  walletlink: {
     package: CoinbaseWalletSDK, // Required
     options: {
