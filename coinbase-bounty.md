@@ -6,7 +6,7 @@
  walletlink: {
     package: CoinbaseWalletSDK, // Required
     options: {
-      appName: "GigConomy", // Required
+      appName: "Studentdesk", // Required
       infuraId: process.env.REACT_APP_INFURA_KEY, // Required unless you provide a JSON RPC url; see `rpc` below
     },
   },
