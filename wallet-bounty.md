@@ -1,9 +1,7 @@
 
 **WalletConnect:** We have used Wallet Connect for easy communication between wallet and dapp.
 
-## WalletConnect Implementation:
-
-https://github.com/GigConomy/GigConomy/blob/master/src/providerOptions.js
+## WalletConnect Implementation: 
 
 ```
 walletconnect: {

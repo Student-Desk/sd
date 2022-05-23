@@ -1,8 +1,6 @@
 **Coinbase Wallet:** Integrated Coinbase connects non custodial wallet for users.
 
-## Coinbase Wallet Implementation:
-
-https://github.com/GigConomy/GigConomy/blob/master/src/providerOptions.js
+## Coinbase Wallet Implementation: 
 
 ```
  walletlink: {

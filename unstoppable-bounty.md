@@ -1,8 +1,6 @@
 **Unstoppable Login:** We have used Unstoppable crypto domain login so users can login to using different domains like .crypto .x .bitcoin
 
-## Unstoppable Domains Implementation:
-
-https://github.com/GigConomy/GigConomy/blob/master/src/providerOptions.js
+## Unstoppable Domains Implementation: 
 
 ```
 export const uauthOptions = {
