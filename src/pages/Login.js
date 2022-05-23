@@ -11,6 +11,10 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import SaveIcon from '@mui/icons-material/Save';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAt, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
+ 
+import worldID from "@worldcoin/id";
+
+
 
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -95,13 +99,15 @@ function Login() {
                             />
                         </a>
                         <button className="nav-menu me-0 ms-auto"></button>
-                        <div className=" p-2 text-center mt-2 d-flex justify-around">
+                        <div className=" p-2 text-center mt-2 d-flex justify-content-end">
                             <div className="form-group mb-1">
                                 <button onClick={() => authenticate()} style={{ border: '2px solid grey' }}
                                     className="form-control text-left style2-input text-dark fw-600  p-0 mb-2">
                                     <img src="assets/images/fx.png" alt="icon" className="ms-2 w40 mb-1 me-2" /> <span className="mx-2">Sign in with Metamask</span></button>
-                            </div>
+                            </div> 
+                            <div className="m-3">
                             <Button 
+                            className="mx-2"
                                 variant="contained" 
                                 onClick={async () => { 
                                     try { 
@@ -126,7 +132,13 @@ function Login() {
                             > 
                                 Get verified 
                             </Button>
+
+                            </div>
                         </div>
+
+                        
+
+
                         {/* <button onClick={() => connectWallet()} className="header-btn btn d-none d-lg-block bg-current fw-500 text-white font-xsss p-3 ms-auto cursot-pointer text-center lh-20 rounded-xl address-wrap">{currentAddress != null && currentAddress != undefined && currentAddress != '' ? currentAddress : "Connect Wallet"}</button> */}
 
                         {/* <a href="/register" className="header-btn d-none d-lg-block bg-current fw-500 text-white font-xsss p-3 ms-2 w100 text-center lh-20 rounded-xl">Register</a> */}

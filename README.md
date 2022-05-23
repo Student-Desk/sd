@@ -16,9 +16,7 @@
 **StudentDeals:** Students will get all the deals which by our partner networks which will help them availa huge discounts for items and courses like, 1) Offer while purchasing laptop 2) Online course coupons etc 
 
 **Gamezone:** Students can get a chance to play different game and earn NFTs, discounts deals through these games. 
-
-# BOBA Netwrok configration 
-https://github.com/studentdesk-boba/studentdesk-boba-network/blob/master/hardhat.config.js
+ 
 
 # Contract Address
   Social Address = "0xF959bFb40a207575bE5440B543529F57885C1634";
@@ -35,25 +33,7 @@ https://github.com/studentdesk-boba/studentdesk-boba-network/blob/master/hardhat
   
   RandomNumberGeneratorContract = "0x26947a077E869073E2C3a542021e79572EE7a5de";
 
-```javascript
-
-require("@nomiclabs/hardhat-waffle"); 
-require("dotenv").config({ path: "./.env" });
-
-const pk_1 = process.env.REACT_APP_BOBA_PRIVATE_KEY_1;
-
-module.exports = {
-  solidity: "0.8.4",
-  networks: {
-    boba_rinkeby: {
-      url: `https://rinkeby.boba.network`,
-      accounts: [pk_1],
-    }
-  },
-};
-
-
-```
+ 
 
 # Landing Page
 ![Screenshot 2022-05-19 at 11 50 03 AM](https://user-images.githubusercontent.com/104611242/169223982-ad313e1d-324f-4044-8b59-88e145e6bf49.png)
