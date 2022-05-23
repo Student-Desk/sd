@@ -3,7 +3,7 @@
 
 ## WalletConnect Implementation: 
 
-```
+```javascript
 walletconnect: {
     package: WalletConnectProvider, // required
     options: {

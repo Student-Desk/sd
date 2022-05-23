@@ -2,7 +2,7 @@
 
 ## Unstoppable Domains Implementation: 
 
-```
+```javascript
 export const uauthOptions = {
   clientID: "79a8a15a-dddc-4d39-8483-9db5536cc839",
   redirectUri: "http://localhost:3000",

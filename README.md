@@ -60,10 +60,5 @@
 
 ![Screenshot 2022-05-19 at 11 45 47 AM](https://user-images.githubusercontent.com/104611242/169224455-f2fe826b-5567-4bdc-914c-a30e197d76f9.png)
 
-# Studentdesk Metaverse
-
-![Screenshot 2022-05-19 at 11 46 08 AM](https://user-images.githubusercontent.com/104611242/169224525-8eb3f4ce-69e8-4f61-99f1-d094f26fa19a.png)
-
-![Screenshot 2022-05-19 at 11 46 18 AM](https://user-images.githubusercontent.com/104611242/169224543-72a78fba-22fc-4f11-9ab1-82ad62737c5d.png)
-
+ 
 
