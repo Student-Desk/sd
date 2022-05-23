@@ -70,8 +70,9 @@ import MIntedNftPosts from "./pages/MIntedNftPosts";
 
 function App() {
     return (
+      <MoralisProvider appId={process.env.REACT_APP_MORALIS_ID} serverUrl={process.env.REACT_APP_MORALIS_SERVER}>
         <Web3ContextProvider>
-            <MoralisProvider appId={process.env.REACT_APP_MORALIS_ID} serverUrl={process.env.REACT_APP_MORALIS_SERVER}>
+           
                 <BrowserRouter basename={'/'}>
                   
                     <Switch>
@@ -258,9 +259,10 @@ function App() {
               />
             </Switch>
             <Popupchat />
-          </BrowserRouter>
-        </MoralisProvider>
+          </BrowserRouter> 
+        
       </Web3ContextProvider>
+      </MoralisProvider>
     );
   }
 

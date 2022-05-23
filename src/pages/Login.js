@@ -14,13 +14,14 @@ import { faAt, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 
 
 import { ToastContainer, toast } from 'react-toastify';
+import { Button } from "@mui/material";
 
 function Login() {
     const history = new useHistory();
 
     const webContext = React.useContext(Web3Context);
-    const { connectWallet, currentAddress, required, isUpdate } = webContext;
-    const { authenticate, isAuthenticated, user, account, login, authError, userError, isAuthenticating, Moralis } = useMoralis();
+    const { connectWallet, currentAddress, required, isUpdate, account } = webContext;
+    const { authenticate, isAuthenticated, user, login, authError, userError, isAuthenticating, Moralis } = useMoralis();
     const [loading, setLoading] = React.useState(false);
     const [themes, setThemes] = useState('');
 
@@ -65,6 +66,19 @@ function Login() {
             }
         },
     });
+
+    async function getVerified() {
+        try {
+          const result = await worldID.enable();
+          console.log("World ID verified succesfully:", result); // <- Pass this result to your wallet transaction
+        } catch (failure) {
+          console.warn("World ID verification failed:", failure);
+          // Re-activate here so your end user can try again
+        }
+      }
+
+
+
     return (
         <Fragment>
             <ToastContainer />
@@ -81,12 +95,37 @@ function Login() {
                             />
                         </a>
                         <button className="nav-menu me-0 ms-auto"></button>
-                        <div className=" p-2 text-center mt-2">
+                        <div className=" p-2 text-center mt-2 d-flex justify-around">
                             <div className="form-group mb-1">
                                 <button onClick={() => authenticate()} style={{ border: '2px solid grey' }}
                                     className="form-control text-left style2-input text-dark fw-600  p-0 mb-2">
                                     <img src="assets/images/fx.png" alt="icon" className="ms-2 w40 mb-1 me-2" /> <span className="mx-2">Sign in with Metamask</span></button>
                             </div>
+                            <Button 
+                                variant="contained" 
+                                onClick={async () => { 
+                                    try { 
+                                        await connectWallet(); 
+                                    } catch (error) { 
+                                        console.log(error); 
+                                    } 
+                                }} 
+                            > 
+                                Connect 
+                            </Button>
+
+                            <Button 
+                                variant="contained" 
+                                onClick={async () => { 
+                                    try { 
+                                        await getVerified(); 
+                                    } catch (error) { 
+                                        console.log(error); 
+                                    } 
+                                }} 
+                            > 
+                                Get verified 
+                            </Button>
                         </div>
                         {/* <button onClick={() => connectWallet()} className="header-btn btn d-none d-lg-block bg-current fw-500 text-white font-xsss p-3 ms-auto cursot-pointer text-center lh-20 rounded-xl address-wrap">{currentAddress != null && currentAddress != undefined && currentAddress != '' ? currentAddress : "Connect Wallet"}</button> */}
 
@@ -97,10 +136,10 @@ function Login() {
             <div className="container  " style={{ marginTop: '200px' }}>
                 <div className="row">
                     <div className="col-8 mx-auto">
-                        <h1 className="text-center" style={{ fontSize: '40px' ,lineHeight:'56px', fontWeight: 'bold' }}>
+                        <h1 className="text-center" style={{ fontSize: '40px', lineHeight: '56px', fontWeight: 'bold' }}>
                             Decentralized Educational Network to Empower Learners!
                         </h1>
-                        <h4 className="mt-2 mb-4 text-center fw-500">Connect in <span style={{color:'#589340'}}>Metaverse</span>, Share <span style={{color:'#589340'}}>Knowledge</span>, Showcase Projects, Get <span style={{color:'#589340'}}>Scholarships</span>, Earn Crypto!</h4>
+                        <h4 className="mt-2 mb-4 text-center fw-500">Connect in <span style={{ color: '#589340' }}>Metaverse</span>, Share <span style={{ color: '#589340' }}>Knowledge</span>, Showcase Projects, Get <span style={{ color: '#589340' }}>Scholarships</span>, Earn Crypto!</h4>
 
                     </div>
                 </div>

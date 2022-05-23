@@ -23,7 +23,7 @@ import { useMoralis } from "react-moralis";
 import UserProfileModal from "../components/modal/UserProfileModal";
 import { Web3Context } from '../context/WebContext';
 
-
+ 
 function Header() {
   const history = new useHistory();
   const webContext = React.useContext(Web3Context);
