@@ -14,7 +14,7 @@ import { Harmony } from "@harmony-js/core";
 import {
   ChainID,
   ChainType,
-  hexToNumber,
+  hexToNumber, 
   numberToHex,
   fromWei,
   Units,
@@ -22,8 +22,12 @@ import {
 } from "@harmony-js/utils";
 import Web3 from "web3";
 import converter from "bech32-converting"
+import {NotificationContext } from "../../context/EpnsContext";
 
 function SendGift(props) {
+  const notificationContext = React.useContext(NotificationContext);
+  const {  sendNotifications, notificationItems,
+    } = notificationContext;
   const [show, setShow] = useState(false);
   const { Moralis, user } = useMoralis();
   const { isSaving, save, error } = useNewMoralisObject("GiftData");
@@ -89,6 +93,7 @@ function SendGift(props) {
     gifts.set("postId", props.data.objectId);
     gifts.set("transactionHash", result.hash);
     gifts.set("user", user);
+
     await gifts.save().then(
       (monster) => {
         toast.success("Successfully Gifted!", monster.message);
@@ -96,9 +101,11 @@ function SendGift(props) {
       (error) => {
         toast.error(error.message);
       }
-    );
+    ); 
+    await sendNotifications({to:user.attributes.ethAddress,message: `Gifted ${amount} MATIC`})
     setShow(false);
     setIsupdated(!isUpdated);
+
   };
 
   useEffect(() => {}, [isUpdated]);

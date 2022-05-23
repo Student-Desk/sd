@@ -7,6 +7,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
 import CreatePostModal from "../components/modal/Modal";
+import NotificationsPopover from "../components/modal/Notification"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -22,6 +23,7 @@ import {
 import { useMoralis } from "react-moralis";
 import UserProfileModal from "../components/modal/UserProfileModal";
 import { Web3Context } from '../context/WebContext';
+import { IconButton } from "@mui/material";
 
  
 function Header() {
@@ -116,6 +118,7 @@ function Header() {
         </NavLink>
       </div>   
     <CreatePostModal /> 
+     <NotificationsPopover/>
    <UserProfileModal />
       <nav className={`navigation scroll-bar ${navClass}`}>
         <div className="container ps-0 pe-0">

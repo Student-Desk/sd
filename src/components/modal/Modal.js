@@ -9,6 +9,7 @@ import PostAbi from '../../abi/Post.json';
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import web3 from "web3";
+import { NotificationContext } from '../../context/EpnsContext';
 //  import {NFTStorage} from 'nft.storage';
 const apiKey = process.env.FILE_COIN_API_KEY;
 
@@ -17,6 +18,9 @@ const apiKey = process.env.FILE_COIN_API_KEY;
 
 
 export default function CreatePostModal() {
+    const notificationContext = React.useContext(NotificationContext);
+    const {  sendNotifications, notificationItems,
+      } = notificationContext;
     const { user, Moralis, web3EnableError, } = useMoralis();
     const { saveFile, moralisFile } = useMoralisFile();
     const { isSaving, save, error } = useNewMoralisObject("UserPosts");
@@ -118,6 +122,7 @@ export default function CreatePostModal() {
             tokenId: tokenId,
             address: user.attributes.ethAddress,
         }
+        await sendNotifications({to:user.attributes.ethAddress,message: `Successfuly Mint and Published post ${discription}`})
         await save({ saveData, user });
 
         if (user) {

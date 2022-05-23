@@ -58,6 +58,7 @@ import Hotelsingle from './pages/Hotelsingle';
 import Analytics from './pages/Analytics';
 
 import { Web3ContextProvider } from "./context/WebContext";
+import { NotificationContextProvider  } from "./context/EpnsContext";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Appfooter from './components/Appfooter';
 import Popupchat from './components/Popupchat';
@@ -71,6 +72,7 @@ import MIntedNftPosts from "./pages/MIntedNftPosts";
 function App() {
     return (
       <MoralisProvider appId={process.env.REACT_APP_MORALIS_ID} serverUrl={process.env.REACT_APP_MORALIS_SERVER}>
+        <NotificationContextProvider>
         <Web3ContextProvider>
            
                 <BrowserRouter basename={'/'}>
@@ -262,6 +264,7 @@ function App() {
           </BrowserRouter> 
         
       </Web3ContextProvider>
+      </NotificationContextProvider>
       </MoralisProvider>
     );
   }
