@@ -9,8 +9,8 @@ require("dotenv").config({ path: "./.env" });
 
 
 export const uauthOptions = {
-  clientID: "79a8a15a-dddc-4d39-8483-9db5536cc839",
-  redirectUri: "http://localhost:3000",
+  clientID: "8060fc85-8f9f-411c-a0dc-2da75134edae",
+  redirectUri: "https://studentdesk.vercel.app/login",
   // Must include both the openid and wallet scopes.
   scope: "openid wallet",
 };
